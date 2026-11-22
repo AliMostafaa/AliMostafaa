@@ -26,20 +26,20 @@ I run **[KairoDev](https://www.kairodev.com)** — a design-engineering studio b
 
 <table>
   <tr>
-    <td width="50%">
+    <!-- <td width="50%">
       <a href="https://www.kairodev.com/work/begood"><img src="assets/work/begood.png" alt="BeGood storefront" width="100%"></a>
       <br><br>
       <b>BeGood</b> · Shopify Theme · 2026<br>
       <sub>Custom Shopify theme — a motion-rich storefront built with Liquid and conversion-focused e-commerce UX. Designed & developed at KairoDev.</sub>
-    </td>
-    <!-- <td width="50%">
+    </td> -->
+    <td width="50%">
       <a href="https://www.kairodev.com"><img src="assets/work/kairodev.png" alt="KairoDev studio website" width="100%"></a>
       <br><br>
       <b>KairoDev</b> · Studio Website · 2026<br>
       <sub>Studio site for KairoDev — websites, brand systems, and Shopify themes that load fast and convert. Next.js + a design system built for motion.</sub>
     </td>
   </tr>
-  <tr>
+  <!-- <tr>
     <td width="50%">
       <a href="https://www.kairodev.com/work/velour"><img src="assets/work/velour.png" alt="Velour storefront" width="100%"></a>
       <br><br>
@@ -51,8 +51,8 @@ I run **[KairoDev](https://www.kairodev.com)** — a design-engineering studio b
       <br><br>
       <b>Cashture</b> · Product Design · 2026<br>
       <sub>Personal finance dashboard — portfolio tracking, transaction history, budgeting goals, and multi-currency support.</sub>
-    </td> -->
-  </tr>
+    </td> 
+  </tr> -->
 </table>
 
 <h3 align="center"><code>EXPERIENCE</code></h3>
