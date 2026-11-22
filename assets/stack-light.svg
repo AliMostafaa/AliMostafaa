@@ -16,7 +16,6 @@ text{font-family:'Satoshi',system-ui,sans-serif}
 </filter>
 <clipPath id="pfp"><circle cx="100" cy="100" r="100"/></clipPath>
 </defs>
-<rect width="1280" height="168" fill="#FFF"/>
 <g>
 <rect x="56.0" y="12" width="132.3" height="56" rx="28"
   fill="none" stroke="#e2e2e0" stroke-width="1.5"/>
