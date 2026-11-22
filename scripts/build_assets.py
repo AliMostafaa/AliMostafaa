@@ -210,16 +210,16 @@ def stack(t: dict) -> str:
 
 
 # ── Footer wordmark (components/sections/Footer.tsx — giant alimostafa.me) ──
-def wordmark(t: dict) -> str:
-    W, H = 1280, 240
-    return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}"
-  viewBox="0 0 {W} {H}" role="img" aria-label="{WORDMARK}">
-{defs(t, CABINET_TEXT, None)}
-<rect width="{W}" height="{H}" fill="{t['surface']}"/>
-<text class="display" x="{W / 2}" y="196" font-size="214" letter-spacing="-9"
-  fill="{t['ink']}" text-anchor="middle">{WORDMARK}</text>
-{grain(W, H)}
-</svg>"""
+# def wordmark(t: dict) -> str:
+#     W, H = 1280, 240
+#     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}"
+#   viewBox="0 0 {W} {H}" role="img" aria-label="{WORDMARK}">
+# {defs(t, CABINET_TEXT, None)}
+# <rect width="{W}" height="{H}" fill="{t['surface']}"/>
+# <text class="display" x="{W / 2}" y="196" font-size="214" letter-spacing="-9"
+#   fill="{t['ink']}" text-anchor="middle">{WORDMARK}</text>
+# {grain(W, H)}
+# </svg>"""
 
 
 def main() -> None:
