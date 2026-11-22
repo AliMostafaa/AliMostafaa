@@ -18,7 +18,7 @@ text{font-family:'Satoshi',system-ui,sans-serif}
 <clipPath id="pfp"><circle cx="100" cy="100" r="100"/></clipPath>
 </defs>
 <rect width="1280" height="480" fill="#0D1117"/>
-<g transform="translate(56,48) scale(0.4400)" filter="url(#pshadow)">
+<g transform="translate(56,48) scale(0.4400)">
 <circle cx="100" cy="100" r="100" fill="#1f1f1f"/>
 <g clip-path="url(#pfp)">
   <ellipse cx="100" cy="210" rx="80" ry="76" fill="#efefed"/>

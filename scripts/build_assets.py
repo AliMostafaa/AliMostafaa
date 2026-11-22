@@ -137,7 +137,7 @@ def est_mono(text: str, size: float) -> float:
 # ── Character avatar (components/sections/About.tsx, viewBox 0 0 200 200) ──
 def avatar(t: dict, x: float, y: float, size: float) -> str:
     s = size / 200
-    return f"""<g transform="translate({x},{y}) scale({s:.4f})" filter="url(#pshadow)">
+    return f"""<g transform="translate({x},{y}) scale({s:.4f})">
 <circle cx="100" cy="100" r="100" fill="{t['face']}"/>
 <g clip-path="url(#pfp)">
   <ellipse cx="100" cy="210" rx="80" ry="76" fill="{t['body']}"/>
@@ -186,10 +186,10 @@ def header(t: dict) -> str:
 
 # ── Stack strip ─────────────────────────────────────────────────────────────
 def stack(t: dict) -> str:
-    W, H, PAD, GAP = 1280, 200, 56, 14
+    W, H, PAD, GAP = 1280, 168, 56, 14
     rows = []
     for row_i, row in enumerate([STACK_ROW_1, STACK_ROW_2]):
-        y = 32 + row_i * 80
+        y = 12 + row_i * 80
         x = float(PAD)
         for chip in row:
             w = est_satoshi(chip, 20) + 56
