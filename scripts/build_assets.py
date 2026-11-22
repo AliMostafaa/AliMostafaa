@@ -4,7 +4,7 @@ Build the README's SVG assets for both GitHub color schemes.
 
 Design tokens, copy and character geometry mirror alimostafa.me:
   - lib/tokens.ts + app/globals.css  -> palette, radii, grain
-  - lib/content.ts                   -> tagline, meta pairs, stack, hero words
+  - lib/content.ts                   -> tagline, meta pairs, stack
   - components/sections/About.tsx    -> character avatar (disc/head/body)
   - app/globals.css `.label`         -> uppercase mono eyebrows/pills
 
@@ -33,21 +33,16 @@ BUILD = ROOT / ".build"
 LIGHT = dict(
     bg="#f4f4f3", ink="#0a0a0a", muted="#767674", line="#e2e2e0",
     surface="#f5f5f4", face="#efefed", body="#1f1f1f",
-    glass=(0.32, 0.06), shadow=0.30,
 )
 DARK = dict(
     bg="#0e0e0d", ink="#f2f2f0", muted="#9b9b97", line="#2b2b28",
     surface="#161615", face="#1f1f1f", body="#efefed",
-    glass=(0.16, 0.04), shadow=0.55,
 )
 ORANGE = "#ffa31e"   # character orange — fixed brand ink
-CHARCOAL = "#1f1f1f" # --color-charcoal — never flips
 GREEN = "#79dd00"    # availability dot
-WHITE = "#ffffff"
 
 # ── Copy (lib/content.ts) ───────────────────────────────────────────────────
 NAME = "Ali Mostafa"
-SUB = "SOFTWARE ENGINEER & DESIGNER"
 PILL = "AVAILABLE FROM JUNE 2026"
 TAGLINE = (
     "Software Engineer & Designer · KairoDev Founder · "
@@ -58,15 +53,14 @@ META = [
     ("Building At", "KairoDev"),
     ("Availability", "June 2026"),
 ]
-HERO_WORDS = ["MAKES", "YOU", "GO", "WOW!"]  # lib/content.ts HERO_WORDS
 STACK_ROW_1 = ["Next.js", "React", "TypeScript", "Tailwind CSS", "Framer Motion", "Lenis"]
 STACK_ROW_2 = ["Node.js", "Figma", "Shopify", "Vercel", "Flutter", "Supabase"]
 WORDMARK = "alimostafa.me"
 
 # Every glyph that appears in an SVG, per family — feeds pyftsubset.
-CABINET_TEXT = "".join(HERO_WORDS + [NAME, WORDMARK])
+CABINET_TEXT = NAME + WORDMARK
 SATOSHI_TEXT = "".join(
-    [TAGLINE, SUB] + [p for pair in META for p in pair] + STACK_ROW_1 + STACK_ROW_2
+    [TAGLINE] + [p for pair in META for p in pair] + STACK_ROW_1 + STACK_ROW_2
 )
 
 
@@ -115,23 +109,14 @@ def defs(theme: dict, cabinet: bool, satoshi: bool) -> str:
         faces.append(font_face("Cabinet Grotesk", b64(BUILD / "cabinet.woff2")))
     if satoshi:
         faces.append(font_face("Satoshi", b64(BUILD / "satoshi.woff2")))
-    g1, g2 = theme["glass"]
     return f"""<defs>
 {STYLE.format(faces="\n".join(faces))}
 <filter id="grain" x="0" y="0" width="100%" height="100%">
   <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="4" stitchTiles="stitch"/>
 </filter>
-<filter id="shadow" x="-25%" y="-25%" width="150%" height="175%">
-  <feDropShadow dx="0" dy="18" stdDeviation="18" flood-color="#000" flood-opacity="{theme['shadow']}"/>
-</filter>
 <filter id="pshadow" x="-40%" y="-40%" width="180%" height="180%">
   <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000" flood-opacity="0.28"/>
 </filter>
-<linearGradient id="glass" x1="0" y1="0" x2="0" y2="1">
-  <stop offset="0" stop-color="#fff" stop-opacity="{g1}"/>
-  <stop offset="0.45" stop-color="#fff" stop-opacity="{g2}"/>
-  <stop offset="1" stop-color="#fff" stop-opacity="0.02"/>
-</linearGradient>
 <clipPath id="pfp"><circle cx="100" cy="100" r="100"/></clipPath>
 </defs>"""
 
@@ -141,10 +126,6 @@ def grain(w: int, h: int) -> str:
 
 
 # ── Rough advance-width estimators (iterate visually against previews) ──────
-def est_cabinet(text: str, size: float) -> float:
-    return len(text) * size * 0.64
-
-
 def est_satoshi(text: str, size: float) -> float:
     return len(text) * size * 0.545
 
@@ -166,27 +147,7 @@ def avatar(t: dict, x: float, y: float, size: float) -> str:
 
 # ── Header ──────────────────────────────────────────────────────────────────
 def header(t: dict) -> str:
-    W, H, PAD = 1280, 672, 56
-
-    # Hero word blocks — row of rounded blocks, charcoal + orange "WOW!"
-    BY, BH, GAP, FS, R = 200, 248, 16, 96, 40
-    avail = W - 2 * PAD - GAP * (len(HERO_WORDS) - 1)
-    est = [est_cabinet(w, FS) + 72 for w in HERO_WORDS]
-    scale = avail / sum(est)
-    xs, x = [], float(PAD)
-    for e in est:
-        xs.append((x, e * scale))
-        x += e * scale + GAP
-
-    blocks = []
-    for i, (word, (bx, bw)) in enumerate(zip(HERO_WORDS, xs)):
-        fill = ORANGE if word == "WOW!" else CHARCOAL
-        blocks.append(f"""<g>
-<rect x="{bx:.1f}" y="{BY}" width="{bw:.1f}" height="{BH}" rx="{R}" fill="{fill}"/>
-<rect x="{bx:.1f}" y="{BY}" width="{bw:.1f}" height="{BH}" rx="{R}" fill="url(#glass)"/>
-<text class="display" x="{bx + bw / 2:.1f}" y="{BY + BH / 2 + FS * 0.35:.1f}"
-  font-size="{FS}" letter-spacing="-2.9" fill="{WHITE}"
-  text-anchor="middle">{esc(word)}</text></g>""")
+    W, H, PAD = 1280, 480, 56
 
     # Availability pill (top-right)
     pw = 24 + 12 + 10 + est_mono(PILL, 12.5) + 26
@@ -203,9 +164,9 @@ def header(t: dict) -> str:
     col_w = (W - 2 * PAD) / 3
     for i, (label, value) in enumerate(META):
         cx = PAD + i * col_w
-        cols.append(f"""<text x="{cx:.1f}" y="584" font-size="19" font-weight="500"
+        cols.append(f"""<text x="{cx:.1f}" y="392" font-size="19" font-weight="500"
   fill="{t['ink']}">{esc(label)}</text>
-<text x="{cx:.1f}" y="614" font-size="19" font-weight="500"
+<text x="{cx:.1f}" y="424" font-size="19" font-weight="500"
   fill="{t['muted']}">{esc(value)}</text>""")
 
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}"
@@ -213,14 +174,12 @@ def header(t: dict) -> str:
 {defs(t, True, True)}
 <rect width="{W}" height="{H}" fill="{t['bg']}"/>
 {avatar(t, PAD, 48, 88)}
-<text class="display" x="164" y="86" font-size="40" letter-spacing="-1"
-  fill="{t['ink']}">{esc(NAME)}</text>
-<text class="mono" x="164" y="118" font-size="13" fill="{t['muted']}">{esc(SUB)}</text>
 {pill}
-<g filter="url(#shadow)">{"".join(blocks)}</g>
-<text x="{PAD}" y="508" font-size="25" font-weight="500"
+<text class="display" x="{PAD}" y="252" font-size="116" letter-spacing="-3.5"
+  fill="{t['ink']}">{esc(NAME)}</text>
+<text x="{PAD}" y="310" font-size="25" font-weight="500"
   fill="{t['ink']}">{esc(TAGLINE)}</text>
-<line x1="{PAD}" y1="546" x2="{W - PAD}" y2="546" stroke="{t['line']}" stroke-width="1"/>
+<line x1="{PAD}" y1="350" x2="{W - PAD}" y2="350" stroke="{t['line']}" stroke-width="1"/>
 {"".join(cols)}
 {grain(W, H)}
 </svg>"""
