@@ -56,4 +56,4 @@ I run **[KairoDev](https://www.kairodev.com)** — a design-engineering studio b
   <img src="assets/wordmark-light.svg" alt="alimostafa.me" width="100%">
 </picture> -->
 
-<p align="center"><sub>Cairo, Egypt · Working globally — designed & built with the same tokens as <a href="https://alimostafa.me">alimostafa.me</a> · © 2026 Ali Mostafa</sub></p>
+<p align="center"><sub>Cairo, Egypt · Working globally — designed & built based on <a href="https://alimostafa.me">alimostafa.me</a> · © 2026 Ali Mostafa</sub></p>
