@@ -17,7 +17,7 @@ text{font-family:'Satoshi',system-ui,sans-serif}
 </filter>
 <clipPath id="pfp"><circle cx="100" cy="100" r="100"/></clipPath>
 </defs>
-<rect width="1280" height="480" fill="#f4f4f3"/>
+<rect width="1280" height="480" fill="#FFF"/>
 <g transform="translate(56,48) scale(0.4400)" filter="url(#pshadow)">
 <circle cx="100" cy="100" r="100" fill="#efefed"/>
 <g clip-path="url(#pfp)">
@@ -45,5 +45,4 @@ text{font-family:'Satoshi',system-ui,sans-serif}
   fill="#0a0a0a">Availability</text>
 <text x="834.7" y="424" font-size="19" font-weight="500"
   fill="#767674">June 2026</text>
-<rect width="1280" height="480" filter="url(#grain)" opacity="0.10"/>
 </svg>

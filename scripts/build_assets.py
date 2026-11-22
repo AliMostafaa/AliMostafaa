@@ -32,11 +32,11 @@ BUILD = ROOT / ".build"
 # ── Palette (app/globals.css @theme + [data-theme="dark"]) ──────────────────
 LIGHT = dict(
     bg="#f4f4f3", ink="#0a0a0a", muted="#767674", line="#e2e2e0",
-    surface="#f5f5f4", face="#efefed", body="#1f1f1f", stack_bg="#FFF",
+    surface="#f5f5f4", face="#efefed", body="#1f1f1f", page_bg="#FFF",
 )
 DARK = dict(
     bg="#0e0e0d", ink="#f2f2f0", muted="#9b9b97", line="#2b2b28",
-    surface="#161615", face="#1f1f1f", body="#efefed", stack_bg="#0D1117",
+    surface="#161615", face="#1f1f1f", body="#efefed", page_bg="#0D1117",
 )
 ORANGE = "#ffa31e"   # character orange — fixed brand ink
 GREEN = "#79dd00"    # availability dot
@@ -172,7 +172,7 @@ def header(t: dict) -> str:
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}"
   viewBox="0 0 {W} {H}" role="img" aria-label="{esc(NAME)} — {esc(TAGLINE)}">
 {defs(t, True, True)}
-<rect width="{W}" height="{H}" fill="{t['bg']}"/>
+<rect width="{W}" height="{H}" fill="{t['page_bg']}"/>
 {avatar(t, PAD, 48, 88)}
 {pill}
 <text class="display" x="{PAD}" y="252" font-size="116" letter-spacing="-3.5"
@@ -181,7 +181,6 @@ def header(t: dict) -> str:
   fill="{t['ink']}">{esc(TAGLINE)}</text>
 <line x1="{PAD}" y1="350" x2="{W - PAD}" y2="350" stroke="{t['line']}" stroke-width="1"/>
 {"".join(cols)}
-{grain(W, H)}
 </svg>"""
 
 
@@ -203,7 +202,7 @@ def stack(t: dict) -> str:
     return f"""<svg xmlns="http://www.w3.org/2000/svg" width="{W}" height="{H}"
   viewBox="0 0 {W} {H}" role="img" aria-label="Tech stack">
 {defs(t, None, SATOSHI_TEXT)}
-<rect width="{W}" height="{H}" fill="{t['stack_bg']}"/>
+<rect width="{W}" height="{H}" fill="{t['page_bg']}"/>
 {"".join(rows)}
 </svg>"""
 

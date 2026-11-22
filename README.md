@@ -15,21 +15,21 @@ I run **[KairoDev](https://www.kairodev.com)** — a design-engineering studio b
   <a href="mailto:a.aboueyana@gmail.com">✉️ Email</a>
 </p>
 
-<h3 align="center"><code>STACK</code></h3>
+<p align="center"><strong><code>STACK</code></strong></p>
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/stack-dark.svg">
   <img src="assets/stack-light.svg" alt="Next.js · React · TypeScript · Tailwind CSS · Framer Motion · Lenis · Node.js · Figma · Shopify · Vercel · Flutter · Supabase" width="100%">
 </picture>
 
-<h3 align="center"><code>SELECTED WORK</code></h3>
+<p align="center"><strong><code>SELECTED WORK</code></strong></p>
 
 <a href="https://www.kairodev.com"><img src="assets/work/kairodev.png" alt="KairoDev studio website" width="100%"></a>
 <br><br>
 <b>KairoDev</b> · Studio Website · 2026<br>
 <sub>Studio site for KairoDev — websites, brand systems, and Shopify themes that load fast and convert. Next.js + a design system built for motion.</sub>
 
-<h3 align="center"><code>EXPERIENCE</code></h3>
+<p align="center"><strong><code>EXPERIENCE</code></strong></p>
 
 - 🟠 **KairoDev** — *Founder · Software Engineer · Data Analyst · Designer* · **Now**
   - A design-engineering studio out of Cairo shipping production-ready products across MENA — websites, Shopify themes, mobile apps, and presentations.
@@ -47,7 +47,7 @@ I run **[KairoDev](https://www.kairodev.com)** — a design-engineering studio b
 - [**UpSkillr-learning-V1**](https://github.com/AliMostafaa/UpSkillr-learning-V1) — e-learning platform connecting learners and instructors _(TypeScript)_
 - [**PersonalFinancetracker**](https://github.com/AliMostafaa/PersonalFinancetracker) · [**space-task-manager**](https://github.com/AliMostafaa/space-task-manager) — finance & task tooling _(JavaScript)_ -->
 
-<h3 align="center"><code>NOW</code></h3>
+<p align="center"><strong><code>NOW</code></strong></p>
 
 > **Available since June 2026** — taking on freelance engagements globally. If something here is the kind of thing you're building, [reach out ✉️](mailto:a.aboueyana@gmail.com).
 
