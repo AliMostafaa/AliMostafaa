@@ -66,5 +66,4 @@ text{font-family:'Satoshi',system-ui,sans-serif}
   fill="none" stroke="#e2e2e0" stroke-width="1.5"/>
 <text x="826.4" y="147" font-size="20" font-weight="500"
   fill="#0a0a0a" text-anchor="middle">Supabase</text></g>
-<rect width="1280" height="200" filter="url(#grain)" opacity="0.10"/>
 </svg>

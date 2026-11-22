@@ -205,7 +205,6 @@ def stack(t: dict) -> str:
 {defs(t, None, SATOSHI_TEXT)}
 <rect width="{W}" height="{H}" fill="{t['stack_bg']}"/>
 {"".join(rows)}
-{grain(W, H)}
 </svg>"""
 
 

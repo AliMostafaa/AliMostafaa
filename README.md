@@ -24,16 +24,10 @@ I run **[KairoDev](https://www.kairodev.com)** — a design-engineering studio b
 
 <h3 align="center"><code>SELECTED WORK</code></h3>
 
-<table>
-  <tr>
-    <td>
-      <a href="https://www.kairodev.com"><img src="assets/work/kairodev.png" alt="KairoDev studio website" width="100%"></a>
-      <br><br>
-      <b>KairoDev</b> · Studio Website · 2026<br>
-      <sub>Studio site for KairoDev — websites, brand systems, and Shopify themes that load fast and convert. Next.js + a design system built for motion.</sub>
-    </td>
-  </tr>
-</table>
+<a href="https://www.kairodev.com"><img src="assets/work/kairodev.png" alt="KairoDev studio website" width="100%"></a>
+<br><br>
+<b>KairoDev</b> · Studio Website · 2026<br>
+<sub>Studio site for KairoDev — websites, brand systems, and Shopify themes that load fast and convert. Next.js + a design system built for motion.</sub>
 
 <h3 align="center"><code>EXPERIENCE</code></h3>
 
